@@ -1,0 +1,25 @@
+<div class="product-item">
+    <div>
+        <a href="{% url 'product' product_Image.product.id %}">
+{#            <img src="{{ product_Image.image.url }}" class="image-responsive">#}
+            <img src="/" class="image-responsive">
+        </a>
+    </div>
+    {% if product_Image.product.discount %}
+            <div class="discount-container">
+                <span>{{ product_Image.product.discount }}%</span>
+            </div>
+    {% endif %}
+    <h4>{{ product_Image.product.name }}</h4>
+    <p>
+        {{ product_Image.product.short_description | truncatechars_html:50 }}
+    </p>
+    <div>
+        {{ product_Image.product.price }} RUB
+    </div>
+    <div class="add-to-card-btn">
+        <button class="btn btn-success">
+            Добавить в корзину
+        </button>
+    </div>
+</div>

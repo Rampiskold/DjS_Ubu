@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="section-top">
+        <img src="{% static 'img/water.jpg' %}" class="img-responsive">
+    </div>
+
+
+    <div class="section section1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">
+                        Новинки!
+                    </h1>
+                    {% for product_Image in products_Images %}
+                        <div class="col-lg-3">
+                            {% include 'landing/product_item.html' %}
+                        </div>
+                    {% endfor %}
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section2 simulators-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">
+                        Simulators
+                    </h1>
+                    {% for product_Image in products_Images_simulators %}
+                        <div class="col-lg-offset-2 col-lg-3">
+                           {% include 'landing/product_item.html' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section3 MMORPG-container">
+        <div class="container">
+            <div class="row">
+                 <div class="col-lg-12">
+                    <h1 class="text-center">
+                        MMORPG
+                    </h1>
+                    {% for product_Image in products_Images_MMORPG %}
+                        <div class="col-lg-offset-2 col-lg-3">
+                          {% include 'landing/product_item.html' %}
+                        </div>
+                    {% endfor %}
+                 </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
